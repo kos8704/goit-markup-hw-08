@@ -1,0 +1,65 @@
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  min-height: 609px;
+  padding: 40px;
+  transform: translate(-50%, -50%) scale(100%);
+  border-radius: 4px;
+  background-color: $color-white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+              0px 1px 1px rgba(0, 0, 0, 0.14),
+              0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: $mobile), (max-height: 609px) {
+    top: 30px;
+    transform: translate(-50%) scale(100%);
+  }
+
+  @media screen and (min-width: $mobile) {
+    width: 450px;
+    min-height: 0px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 528px;
+  }
+}
+
+.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal__close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: $color-white;
+  cursor: pointer;
+
+  &:hover .modal__icon,
+  &:focus .modal__icon {
+    fill: $accent-color;
+  }
+}
+
+.modal__heading {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    line-height: 1.15;
+  }
+}
